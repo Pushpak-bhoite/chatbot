@@ -52,3 +52,8 @@ This AI creates *new* content (text, images, music, code) based on what it has l
 * **It is:** Advanced mathematics, pattern recognition, and statistics operating at a speed and scale that humans cannot match.
 * **It is not:** Alive, conscious, or capable of "understanding" what it is doing. A language AI doesn't "know" what a dog is; it just knows which words mathematically associate with the word "dog."
 (venv) ➜  02_project_opeai git:(main) ✗ 
+
+
+
+bifurget
+format whole code, like according to prompt prompt styling types 
