@@ -11,7 +11,7 @@ print("✅ Environment loaded")
 
 #1. Loading
 loader = PyPDFLoader(
-    file_path = "./rag-health.pdf",
+    file_path = "./rag-nodejs.pdf",
     # headers = None
     # password = None,
     mode = "page", # page | single (single parse whole pdf as single chunk, and page is like page wise )
@@ -20,10 +20,10 @@ docs = loader.load()
 print(f"✅ Step 1: Loaded {len(docs)} pages->\n",docs )
 
 #2. Splitting
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)  # overlap - is every chunk takes some part of it's previous chunk(text) so it helps every chunk to keep context. 
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=200)  # overlap - is every chunk takes some part of it's previous chunk(text) so it helps every chunk to keep context. 
 #It's kind of recap from previous chunk
 chunks = text_splitter.split_documents(docs)
-print(f"✅ Step 2: Created {len(chunks)} chunks ->\n", chunks)
+print(f"✅ Step 2: Created {len(chunks)} chunks ->\n", chunks[0])
 
 #3. Embedding Model 
 embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
@@ -36,7 +36,7 @@ qdrant = QdrantVectorStore.from_documents(
     embedding=embeddings,  # Fixed: 'embedding' not 'embeddings'
     url="http://localhost:6333", # run container first - visit - http://localhost:6333/dashboard#/collections
     # prefer_grpc=True,
-    collection_name="pushpak_rag_health_documents_1",
+    collection_name="pushpak_rag_nodejs_documents",
 )
 print("✅ Step 4: qdrant -> \n", qdrant)
 print("✅ Step 5: Indexing done!")

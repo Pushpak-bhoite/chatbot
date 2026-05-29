@@ -1,3 +1,4 @@
+# This code is specific to LangChain Open AI, it's just for reference, it does not work as it doesn't have API key.
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_qdrant import QdrantVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -36,7 +37,7 @@ qdrant = QdrantVectorStore.from_documents(
     embeddings=embeddings,
     url="http://localhost:6333", # run container first - visit - http://localhost:6333/dashboard#/collections
     # prefer_grpc=True,
-    collection_name="pushpak_rag_health_documents_1",
+    collection_name="pushpak_india_health_insurance",
 )
 
 print(f"indexing of documents done....")

@@ -16,7 +16,7 @@ print("⏳ Step 2: Connecting to Qdrant...")
 qdrant_vector_DB = QdrantVectorStore.from_existing_collection(
     embedding=embeddings,  # Fixed: 'embedding' not 'embeddings'
     url="http://127.0.0.1:6333", # Changed localhost to 127.0.0.1
-    collection_name="pushpak_rag_health_documents_1",
+    collection_name="pushpak_rag_nodejs_documents",
 )
 print(f"✅ Step 2: Connected to Qdrant DB")
 # 3. User Input
@@ -28,7 +28,6 @@ print(f"✅ Step 2: User query received -> '{USER_QUERY}'")
 search_results = qdrant_vector_DB.similarity_search(query=USER_QUERY)
 print(f"✅ Step 4: Found {len(search_results)} relevant chunks")
 print(f"   📄 Preview of first result: {search_results[0].page_content[:100]}...")
-print(f"   📄 Preview of whole result: {search_results}...")
 
 # 5. Context (created it with iteration )
 context = "\n\n\n".join([f"Page Content: {result.page_content} \nPage Number: {result.metadata['page_label']} \nFile Location: {result.metadata['source']}"
@@ -57,7 +56,7 @@ print("✅ Step 8: OpenAI client initialized")
 
 print("⏳ Step 9: Sending request to Gemini...")
 response = client.chat.completions.create(
-    model="gemini-3.5-flash",
+    model="gemini-2.5-flash",
     messages=[
         {   "role": "system",
             "content": SYSTEM_PROMPT
