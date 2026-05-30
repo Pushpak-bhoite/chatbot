@@ -24,7 +24,7 @@ USER_QUERY = input("Ask : ")
 print(f"✅ Step 2: User query received -> '{USER_QUERY}'")
 
 
-# 4. similarity search in existing DB -  This will return relavant chanuks from vector DB. 
+# 4. similarity search in existing DB -  This will return relevant chunks from vector DB. 
 search_results = qdrant_vector_DB.similarity_search(query=USER_QUERY)
 print(f"✅ Step 4: Found {len(search_results)} relevant chunks")
 print(f"   📄 Preview of first result: {search_results[0].page_content[:100]}...")
@@ -69,5 +69,7 @@ response = client.chat.completions.create(
 )
 print("✅ Step 9: Response received!")
 
-print(f"\n{'='*50}")
+print(f"\n{'='*20}")
 print(f"Res==>\n\n {response.choices[0].message.content}")
+
+
