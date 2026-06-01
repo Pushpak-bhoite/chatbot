@@ -61,7 +61,4 @@ def process_query(query:str):
     )
     print(f"\n{'='*20}")
     print(f"✅ Res==>\n\n {response.choices[0].message.content}")
-    return response.choices[0].message.content
-
-
-    
+    return response.choices[0].message.content    
