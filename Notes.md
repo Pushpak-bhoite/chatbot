@@ -11,3 +11,6 @@ Options for Embedding (we can do free) - https://docs.langchain.com/oss/python/i
 quadrant vector store - https://docs.langchain.com/oss/python/integrations/vectorstores/qdrant
 
 -----------------
+LangGraph 
+
+- Build Email Agent - (This following doc has everything to build Email agent)- https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph#user-fixable
