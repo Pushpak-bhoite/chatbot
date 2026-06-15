@@ -71,30 +71,3 @@ format whole code, like according to prompt prompt styling types
 
 
 
-
-
- In Node.js, an **emitter** typically refers to an object that is an instance of the `EventEmitter` class, which is part of the `events` module.
-
-It's used to handle events, providing a mechanism to:
-*   **Trigger an event** using the `emit()` method.
-*   **Add a callback function** (also known as a listener) that gets executed when a specific event is triggered, using the `on()` method.
-
-For example, you can initialize an `EventEmitter` like this:
-```javascript
-import { EventEmitter } from 'node:events'
-const eventEmitter = new EventEmitter()
-```
-
-You can find more details and examples on how to use `emit` and `on` methods on **page 15**. Additionally, other methods associated with an `emitter`, such as `eventNames()`, `getMaxListeners()`, and `listenerCount()`, are described on **page 39**.
-(venv) ➜  09_RAG git:(main) ✗ 
-
-
-{
-  "status": "queued",
-  "job_id": "0fe1263f-a4bf-4e1c-82a4-5f0e2d97fced"
-}
-
-{
-  "status": "queued",
-  "job_id": "dbf7ef74-57b6-4475-aeac-209778fc58b3"
-}
