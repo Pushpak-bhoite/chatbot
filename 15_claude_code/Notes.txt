@@ -1,0 +1,2 @@
+Im buiding this claude code project for just practice using gpt 
+use it's own venv 

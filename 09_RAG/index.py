@@ -41,4 +41,3 @@ qdrant = QdrantVectorStore.from_documents(
 )
 
 print(f"indexing of documents done....")
-
